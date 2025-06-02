@@ -1,26 +1,86 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
+# ---------------------
+# Node.js Dependencies
+# ---------------------
+node_modules/
+.pnp/
 .pnp.js
 
-# testing
-/coverage
-/credentia.js
+# ---------------------
+# Build and Production
+# ---------------------
+build/
+dist/
+client/build/
+server/build/
+server/dist/
 
-# production
-/build
+# ---------------------
+# Testing
+# ---------------------
+coverage/
+client/coverage/
+server/coverage/
+*.lcov
 
-# misc
+# ---------------------
+# Environment Variables
+# ---------------------
 .env
-.DS_Store
+.env.*
+!.env.example
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# ---------------------
+# Logs
+# ---------------------
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.vercel
+
+# ---------------------
+# Editor & OS Specific
+# ---------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---------------------
+# Credential or Secret Files
+# ---------------------
+credentia.js
+
+# ---------------------
+# Deployment / Hosting
+# ---------------------
+.vercel/
+.netlify/
+firebase-debug.log
+firebase.json
+
+# ---------------------
+# Terraform
+# ---------------------
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+terraform.tfvars
+terraform.tfvars.json
+.terraform.lock.hcl
+*.backup
+
+# ---------------------
+# Optional: Misc
+# ---------------------
+*.bak
+*.swp
+*.tmp
+*.log
