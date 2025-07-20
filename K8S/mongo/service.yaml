@@ -1,0 +1,13 @@
+apiVersion: 
+kind: Service
+metadate:
+  name: app-service
+  namespace: hireme
+spec:
+  clusterIP: None
+  selector:
+    app: mongo
+  ports:
+  - name: mongo
+    port: 27017
+    targetPort: 27017

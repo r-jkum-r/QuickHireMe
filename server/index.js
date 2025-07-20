@@ -49,7 +49,7 @@ if (NODE_ENV === 'production') {
 
 //database connection
 try {
-  if (DB_STRING && DB_STRING !== '<YOUR_DB_STRING>') {
+  if (DB_STRING && DB_STRING !== 'mongodb://localhost:27017/home_services_platform') {
     mongoose.connect(DB_STRING);
     const db = mongoose.connection;
     console.log(process.env.NODE_ENV);

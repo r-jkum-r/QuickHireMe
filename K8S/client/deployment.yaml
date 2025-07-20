@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+  namespace: hireme
+  labels:
+    app: client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+      - name: client
+        image: rajkumarmca23/hireme-client:latest
+        ports:
+        - containerPort: 3000
+          name: http-client
+        envFrom:
+        - configMapRef:
+            name: app-config
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
+        livenessProbe:
+          httpGet:
+            path: / # Or your client's health endpoint
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: / # Or your client's readiness endpoint
+            port: 300
+          initialDelaySeconds: 5
+          periodSeconds: 10

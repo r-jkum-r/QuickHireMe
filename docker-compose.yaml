@@ -1,0 +1,47 @@
+# version: "3.8"
+
+# services:
+#   frontend:
+#     build: ./client
+#     container_name: client-ctn
+#     ports:
+#       - "3000:3000"
+#     depends_on: 
+#       - backend
+#     networks:
+#       - mern-network
+
+#   backend:
+#     build: ./server
+#     container_name: server-ctn
+#     ports:
+#       - "5000:5000"
+#     depends_on:
+#       - mongo
+#     environment:
+#       - PORT=5000
+#       - DB_STRING=mongodb://mongo:27017/home_services_platform
+#       - NODE_ENV=development
+#       - API_VERSION=/v1
+#       - SECRET=mySuperSecretKey123
+#       - GMAIL=raj4122002@gmail.com
+#       - GMAIL_PASSWORD=rajt9987
+#     networks:
+#       - mern-network
+
+#   mongo:
+#     image: mongo:latest
+#     container_name: mongo-ctn
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongo-data:/data/db
+#     networks:
+#       - mern-network
+
+# volumes:
+#   mongo-data:
+
+# networks:
+#   mern-network:
+#     driver: bridge
