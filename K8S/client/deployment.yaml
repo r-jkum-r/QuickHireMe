@@ -35,11 +35,11 @@ spec:
           httpGet:
             path: / # Or your client's health endpoint
             port: 5000
-          initialDelaySeconds: 10
-          periodSeconds: 15
+          initialDelaySeconds: 30
+          periodSeconds: 40
         readinessProbe:
           httpGet:
             path: / # Or your client's readiness endpoint
             port: 5000
-          initialDelaySeconds: 5
-          periodSeconds: 10
+          initialDelaySeconds: 30
+          periodSeconds: 40
