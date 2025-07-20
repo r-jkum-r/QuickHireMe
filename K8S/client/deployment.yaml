@@ -19,7 +19,7 @@ spec:
       - name: client
         image: rajkumarmca23/hireme-client:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 5000
           name: http-client
         envFrom:
         - configMapRef:
@@ -34,12 +34,12 @@ spec:
         livenessProbe:
           httpGet:
             path: / # Or your client's health endpoint
-            port: 3000
+            port: 5000
           initialDelaySeconds: 10
           periodSeconds: 15
         readinessProbe:
           httpGet:
             path: / # Or your client's readiness endpoint
-            port: 300
+            port: 5000
           initialDelaySeconds: 5
           periodSeconds: 10

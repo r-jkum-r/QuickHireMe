@@ -1,7 +1,7 @@
-apiVersion: 
+apiVersion: v1
 kind: Service
-metadate:
-  name: app-service
+metadata:
+  name: mongo
   namespace: hireme
 spec:
   clusterIP: None

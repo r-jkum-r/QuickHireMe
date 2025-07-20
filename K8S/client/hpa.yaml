@@ -1,7 +1,7 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpa
+  name: client-hpa
   namespace: hireme
 spec: 
   scaleTargetRef:

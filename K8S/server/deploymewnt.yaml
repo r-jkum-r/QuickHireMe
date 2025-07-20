@@ -24,11 +24,11 @@ spec:
           envFrom:
           - configMapRef:
               name: app-config
-          - secretMapRef:
+          - secretRef:
               name: app-secret
-          env:
-          - name: NODE_ENV
-            value: production
+          # env:
+          # - name: NODE_ENV
+          #   value: production
           resources:
             requests:
               cpu: 100m
@@ -39,12 +39,12 @@ spec:
           livenessProbe:
             httpGet:
               path: /healthz
-              port: 8080
+              port: 3000
             initialDelaySeconds: 15
             periodSeconds: 20
           readinessProbe:
             httpGet:
               path: /ready
-              port: 8080
+              port: 3000
             initialDelaySeconds: 5
             periodSeconds: 10
