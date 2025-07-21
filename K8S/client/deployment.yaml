@@ -19,7 +19,7 @@ spec:
       - name: client
         image: rajkumarmca23/hireme-client:latest
         ports:
-        - containerPort: 5000
+        - containerPort: 3000
           name: http-client
         envFrom:
         - configMapRef:
@@ -31,15 +31,15 @@ spec:
           limits:
             cpu: 200m
             memory: 256Mi
-        livenessProbe:
-          httpGet:
-            path: / # Or your client's health endpoint
-            port: 5000
-          initialDelaySeconds: 30
-          periodSeconds: 40
-        readinessProbe:
-          httpGet:
-            path: / # Or your client's readiness endpoint
-            port: 5000
-          initialDelaySeconds: 30
-          periodSeconds: 40
+        # livenessProbe:
+        #   httpGet:
+        #     path: / # Or your client's health endpoint
+        #     port: 3000
+        #   initialDelaySeconds: 30
+        #   periodSeconds: 40
+        # readinessProbe:
+        #   httpGet:
+        #     path: / # Or your client's readiness endpoint
+        #     port: 3000
+        #   initialDelaySeconds: 30
+        #   periodSeconds: 40
