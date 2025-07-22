@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: rajkumarmca23/hireme-server:latest
+          image: rajkumarmca23/hireme-server:v1
           ports:
           - containerPort: 5000
             name: http-server
@@ -26,9 +26,6 @@ spec:
               name: app-config
           - secretRef:
               name: app-secret
-          # env:
-          # - name: NODE_ENV
-          #   value: production
           resources:
             requests:
               cpu: 100m

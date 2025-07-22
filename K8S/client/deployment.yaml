@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: client
-        image: rajkumarmca23/hireme-client:latest
+        image: rajkumarmca23/hireme-client:v1
         ports:
         - containerPort: 3000
           name: http-client
